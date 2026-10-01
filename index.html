@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dominion Academy</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#102a36;
+    background:#fff;
+}
+
+/* ================= NAVBAR ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(15px);
+    box-shadow:0 3px 20px rgba(0,0,0,.08);
+}
+
+nav{
+    max-width:1200px;
+    margin:auto;
+    height:80px;
+    padding:0 25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:23px;
+    font-weight:900;
+}
+
+.logo-box{
+    width:45px;
+    height:45px;
+    border-radius:13px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-weight:900;
+
+    background:linear-gradient(
+        135deg,
+        #13c9c3,
+        #ef5c88
+    );
+}
+
+.logo span{
+    color:#ef5c88;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#17343e;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#ef5c88;
+}
+
+.admission-btn{
+    background:#13bdb8;
+    color:white !important;
+    padding:12px 20px;
+    border-radius:30px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:700px;
+
+    display:flex;
+    align-items:center;
+
+    background:
+    radial-gradient(
+        circle at 90% 10%,
+        rgba(239,92,136,.18),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 5% 90%,
+        rgba(19,201,195,.18),
+        transparent 30%
+    ),
+    linear-gradient(
+        135deg,
+        #f4ffff,
+        #fff7fa
+    );
+}
+
+.hero-container{
+    max-width:1200px;
+    width:90%;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:60px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+
+    padding:9px 15px;
+    margin-bottom:20px;
+
+    border-radius:30px;
+
+    background:#e2fbfa;
+    color:#078d91;
+
+    font-size:13px;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-size:clamp(45px,6vw,78px);
+    line-height:1.02;
+    letter-spacing:-3px;
+    margin-bottom:25px;
+}
+
+.turquoise{
+    color:#07999b;
+}
+
+.rose{
+    color:#ef5c88;
+}
+
+.hero p{
+    max-width:650px;
+
+    color:#657982;
+
+    font-size:18px;
+    line-height:1.8;
+}
+
+.buttons{
+    margin-top:30px;
+
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+
+    padding:15px 24px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.primary{
+    background:#12bdb8;
+    color:white;
+
+    box-shadow:
+    0 12px 30px rgba(18,189,184,.25);
+}
+
+.secondary{
+    background:white;
+    color:#17343e;
+
+    border:1px solid #dce8e9;
+}
+
+/* ================= HERO CARD ================= */
+
+.hero-card{
+    height:480px;
+
+    padding:12px;
+
+    border-radius:35px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #087f87,
+        #13c9c3 55%,
+        #ef5c88
+    );
+
+    transform:rotate(2deg);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.15);
+}
+
+.hero-card-inner{
+    height:100%;
+
+    border-radius:27px;
+
+    padding:35px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.2),
+        rgba(255,255,255,.03)
+    );
+}
+
+.hero-card-inner h2{
+    font-size:45px;
+    line-height:1;
+}
+
+.hero-card-inner p{
+    color:white;
+    margin-top:10px;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:90px 0;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    max-width:720px;
+    margin:0 auto 50px;
+}
+
+.eyebrow{
+    color:#ef5c88;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:12px;
+    font-weight:900;
+}
+
+.section-title h2{
+    font-size:clamp(34px,5vw,52px);
+    line-height:1.1;
+    margin:10px 0;
+}
+
+.section-title p{
+    color:#657982;
+}
+
+/* ================= SCHOOL CARDS ================= */
+
+.school-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+.school-card{
+    padding:32px;
+
+    border-radius:25px;
+
+    background:white;
+
+    border:1px solid #e8eeee;
+
+    box-shadow:
+    0 15px 45px rgba(10,55,65,.09);
+
+    transition:.3s;
+}
+
+.school-card:hover{
+    transform:translateY(-8px);
+}
+
+.icon{
+    width:60px;
+    height:60px;
+
+    border-radius:18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+
+    background:#e4fbfa;
+
+    margin-bottom:20px;
+}
+
+.school-card:nth-child(2) .icon{
+    background:#fff0f4;
+}
+
+.school-card:nth-child(3) .icon{
+    background:#edf5ff;
+}
+
+.school-card h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.school-card p{
+    color:#687b83;
+    line-height:1.7;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:#f3fbfb;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+.about-image{
+    height:440px;
+
+    border-radius:35px;
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #c9f7f5,
+        #fff0f4
+    );
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.1);
+}
+
+.circle-one{
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    border-radius:50%;
+
+    background:#13c9c3;
+
+    top:-80px;
+    left:-80px;
+}
+
+.circle-two{
+    position:absolute;
+
+    width:230px;
+    height:230px;
+
+    border-radius:50%;
+
+    background:#ef5c88;
+
+    right:-70px;
+    bottom:-60px;
+}
+
+.about-quote{
+    position:absolute;
+
+    left:30px;
+    right:30px;
+    bottom:30px;
+
+    padding:25px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.9);
+
+    font-size:21px;
+    font-weight:bold;
+}
+
+.about-text h2{
+    font-size:50px;
+    line-height:1.1;
+
+    margin:10px 0 20px;
+}
+
+.about-text p{
+    color:#687b83;
+    line-height:1.8;
+}
+
+.check-list{
+    margin:25px 0;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+}
+
+.check{
+    font-weight:bold;
+}
+
+.check::before{
+    content:"✓";
+
+    color:#09a5a1;
+
+    margin-right:8px;
+}
+
+/* ================= PROPRIETOR ================= */
+
+.proprietor{
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #071e27,
+        #124451
+    );
+}
+
+.proprietor-grid{
+    display:grid;
+
+    grid-template-columns:350px 1fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.proprietor-photo{
+    height:420px;
+
+    border-radius:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        145deg,
+        #13c9c3,
+        #ef5c88
+    );
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.3);
+}
+
+.photo-placeholder{
+    padding:30px;
+}
+
+.photo-placeholder div{
+    width:120px;
+    height:120px;
+
+    margin:auto auto 20px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,255,255,.2);
+
+    font-size:50px;
+}
+
+.proprietor h2{
+    font-size:clamp(38px,5vw,60px);
+
+    line-height:1.05;
+
+    margin:10px 0 20px;
+}
+
+.proprietor p{
+    color:#c6d8dc;
+
+    max-width:650px;
+
+    line-height:1.8;
+}
+
+.signature{
+    margin-top:25px;
+
+    font-weight:bold;
+}
+
+.signature span{
+    display:block;
+
+    color:#72ded9;
+
+    font-size:13px;
+}
+
+/* ================= VALUES ================= */
+
+.values{
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+}
+
+.value{
+    text-align:center;
+
+    padding:28px 15px;
+
+    border-radius:20px;
+
+    border:1px solid #e7eeee;
+}
+
+.value-icon{
+    font-size:35px;
+}
+
+.value h3{
+    margin-top:12px;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    padding:80px 0;
+}
+
+.cta-box{
+    text-align:center;
+
+    padding:65px 25px;
+
+    border-radius:35px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        120deg,
+        #087f87,
+        #13c9c3 55%,
+        #ef5c88
+    );
+}
+
+.cta-box h2{
+    font-size:clamp(35px,5vw,55px);
+}
+
+.cta-box p{
+    max-width:650px;
+
+    margin:15px auto 25px;
+
+    color:#efffff;
+}
+
+.cta-box .btn{
+    background:white;
+    color:#102a36;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#071e27;
+    color:#b7cbd0;
+
+    padding:60px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+
+    grid-template-columns:
+    1.3fr 1fr 1fr;
+
+    gap:40px;
+}
+
+.footer-logo{
+    font-size:24px;
+    font-weight:900;
+    color:white;
+}
+
+.footer-logo span{
+    color:#ef5c88;
+}
+
+footer h4{
+    color:white;
+    margin-bottom:15px;
+}
+
+footer a{
+    display:block;
+
+    color:#b7cbd0;
+
+    text-decoration:none;
+
+    margin:8px 0;
+}
+
+.copyright{
+    border-top:1px solid #17353e;
+
+    margin-top:40px;
+    padding-top:20px;
+
+    display:flex;
+    justify-content:space-between;
+
+    font-size:13px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:850px){
+
+    nav ul{
+        display:none;
+    }
+
+    .hero-container,
+    .about-grid,
+    .proprietor-grid{
+        grid-template-columns:1fr;
+    }
+
+    .school-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-card{
+        height:380px;
+    }
+
+    .proprietor-grid{
+        gap:35px;
+    }
+
+    .values{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    .hero{
+        padding:65px 0;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .check-list{
+        grid-template-columns:1fr;
+    }
+
+    .values{
+        grid-template-columns:1fr;
+    }
+
+    .copyright{
+        flex-direction:column;
+        gap:8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+<div class="logo-box">
+DA
+</div>
+
+Dominion
+<span>Academy</span>
+
+</div>
+
+<ul>
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#schools">Schools</a>
+</li>
+
+<li>
+<a href="#about">About</a>
+</li>
+
+<li>
+<a href="#proprietor">Proprietor</a>
+</li>
+
+<li>
+<a class="admission-btn"
+href="#contact">
+Admissions
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-container">
+
+<div>
+
+<div class="badge">
+● BUILDING LEADERS • SHAPING FUTURES
+</div>
+
+<h1>
+
+Where
+<span class="turquoise">
+Excellence
+</span>
+
+Becomes
+
+<span class="rose">
+Legacy.
+</span>
+
+</h1>
+
+<p>
+
+Welcome to Dominion Academy — a modern educational community committed to academic excellence, character development and preparing students for a changing world.
+
+</p>
+
+<div class="buttons">
+
+<a href="#schools"
+class="btn primary">
+Explore Our Schools →
+</a>
+
+<a href="#contact"
+class="btn secondary">
+Admission Enquiry
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<div class="hero-card-inner">
+
+<h2>
+DOMINION<br>
+ACADEMY
+</h2>
+
+<p>
+Learn. Lead. Become.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SCHOOLS ================= -->
+
+<section id="schools">
+
+<div class="container">
+
+<div class="section-title">
+
+<div class="eyebrow">
+OUR ACADEMIC COMMUNITY
+</div>
+
+<h2>
+Education for every stage of the journey.
+</h2>
+
+<p>
+From foundational learning to advanced study, Dominion Academy provides a pathway designed to help learners discover their strengths and build their future.
+</p>
+
+</div>
+
+
+<div class="school-grid">
+
+
+<div class="school-card">
+
+<div class="icon">
+🌱
+</div>
+
+<h3>
+Primary School
+</h3>
+
+<p>
+A strong foundation built around curiosity, literacy, numeracy, confidence and positive character.
+</p>
+
+</div>
+
+
+<div class="school-card">
+
+<div class="icon">
+🚀
+</div>
+
+<h3>
+Secondary School
+</h3>
+
+<p>
+A stimulating environment where students deepen their knowledge, develop leadership and prepare for higher education.
+</p>
+
+</div>
+
+
+<div class="school-card">
+
+<div class="icon">
+🎓
+</div>
+
+<h3>
+University
+</h3>
+
+<p>
+Advanced learning focused on knowledge, innovation, critical thinking and preparation for meaningful careers.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+<div class="container about-grid">
+
+
+<div class="about-image">
+
+<div class="circle-one"></div>
+
+<div class="circle-two"></div>
+
+<div class="about-quote">
+
+“Education is the foundation from which great lives are built.”
+
+</div>
+
+</div>
+
+
+<div class="about-text">
+
+<div class="eyebrow">
+WHY DOMINION ACADEMY
+</div>
+
+<h2>
+A school designed around the whole learner.
+</h2>
+
+<p>
+
+We combine strong academics with character, creativity, confidence and leadership so that students can grow into capable and responsible members of society.
+
+</p>
+
+
+<div class="check-list">
+
+<div class="check">
+Student-centred learning
+</div>
+
+<div class="check">
+Character development
+</div>
+
+<div class="check">
+Academic excellence
+</div>
+
+<div class="check">
+Leadership opportunities
+</div>
+
+<div class="check">
+Modern learning environment
+</div>
+
+<div class="check">
+Future-ready skills
+</div>
+
+</div>
+
+
+<a href="#contact"
+class="btn primary">
+Start Your Journey
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROPRIETOR ================= -->
+
+<section class="proprietor"
+id="proprietor">
+
+<div class="container proprietor-grid">
+
+
+<div class="proprietor-photo">
+
+<!--
+IMPORTANT:
+Replace the placeholder below with the proprietor's photo.
+
+Example:
+
+<img src="proprietor.jpg"
+     alt="Mr Donkey Precious">
+
+-->
+
+<div class="photo-placeholder">
+
+<div>
+👤
+</div>
+
+<strong>
+PROPRIETOR
+</strong>
+
+<p style="margin-top:8px;color:white">
+Mr Donkey Precious
+</p>
+
+</div>
+
+</div>
+
+
+<div>
+
+<div class="eyebrow">
+LEADERSHIP
+</div>
+
+<h2>
+Mr Donkey Precious
+</h2>
+
+<p>
+
+Proprietor of Dominion Academy.
+
+With a vision centred on quality education and the development of well-rounded learners, Mr Donkey Precious leads the school community toward a culture of excellence, discipline and opportunity.
+
+</p>
+
+<div class="signature">
+
+Mr Donkey Precious
+
+<span>
+Proprietor, Dominion Academy
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= VALUES ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<div class="eyebrow">
+THE DOMINION STANDARD
+</div>
+
+<h2>
+More than a classroom.
+</h2>
+
+<p>
+A learning experience built to encourage students to think, create, collaborate and lead.
+</p>
+
+</div>
+
+
+<div class="values">
+
+
+<div class="value">
+
+<div class="value-icon">
+📚
+</div>
+
+<h3>
+Strong Academics
+</h3>
+
+</div>
+
+
+<div class="value">
+
+<div class="value-icon">
+💡
+</div>
+
+<h3>
+Innovation
+</h3>
+
+</div>
+
+
+<div class="value">
+
+<div class="value-icon">
+🤝
+</div>
+
+<h3>
+Character
+</h3>
+
+</div>
+
+
+<div class="value">
+
+<div class="value-icon">
+🏆
+</div>
+
+<h3>
+Leadership
+</h3>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="cta" id="contact">
+
+<div class="container">
+
+<div class="cta-box">
+
+<h2>
+Ready to join the Dominion family?
+</h2>
+
+<p>
+
+Visit us at 31, Samuel Ekunola Street to learn more about our educational programmes and admission opportunities.
+
+</p>
+
+<a href="mailto:info@dominionacademy.edu"
+class="btn">
+
+Contact Dominion Academy →
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<div class="footer-logo">
+
+Dominion
+<span>
+Academy
+</span>
+
+</div>
+
+<p style="margin-top:12px">
+
+Building confident learners, responsible citizens and future leaders.
+
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+Explore
+</h4>
+
+<a href="#home">
+Home
+</a>
+
+<a href="#schools">
+Our Schools
+</a>
+
+<a href="#about">
+About Us
+</a>
+
+<a href="#proprietor">
+Proprietor
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Contact
+</h4>
+
+<a href="#contact">
+31, Samuel Ekunola Street
+</a>
+
+<a href="mailto:info@dominionacademy.edu">
+info@dominionacademy.edu
+</a>
+
+<a href="#contact">
+Admissions Enquiry
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+<span>
+© 2026 Dominion Academy. All rights reserved.
+</span>
+
+<span>
+Excellence • Character • Leadership
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* Smooth navigation */
+
+document.querySelectorAll('a[href^="#"]')
+.forEach(link => {
+
+link.addEventListener(
+'click',
+function(e){
+
+const target =
+document.querySelector(
+this.getAttribute('href')
+);
+
+if(target){
+
+e.preventDefault();
+
+target.scrollIntoView({
+behavior:'smooth'
+});
+
+}
+
+});
+
+});
+
+
+/* Simple scroll animation */
+
+const cards =
+document.querySelectorAll(
+'.school-card, .value, .about-image'
+);
+
+const observer =
+new IntersectionObserver(
+entries => {
+
+entries.forEach(
+entry => {
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity='1';
+
+entry.target.style.transform=
+'translateY(0)';
+
+}
+
+});
+
+},
+{
+threshold:.15
+}
+);
+
+
+cards.forEach(card => {
+
+card.style.opacity='0';
+
+card.style.transform=
+'translateY(25px)';
+
+card.style.transition=
+'opacity .7s ease, transform .7s ease';
+
+observer.observe(card);
+
+});
+
+</script>
+
+</body>
+</html>
